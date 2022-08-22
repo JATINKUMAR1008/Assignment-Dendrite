@@ -6,7 +6,7 @@ const Main = ({ sidenav, handleChange }) => {
   return (
     <div className={`Main-container ${sidenav ? "open" : "closed"}`}>
       <div>
-        <img src={image} alt="image"/>
+        <img src={image} alt="image" className="image-main"/>
         <div className=" text-white text-end ">
           <div className="card-img-overlay">
             <p className="fw-bold p-1 main-title">

@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 const firebaseConfig = {
-  apiKey: "AIzaSyDzcLCXg76BovH6CFQaMJ1iiQq1aT1csD4",
-  authDomain: "frontend-assignment-6e7bb.firebaseapp.com",
-  databaseURL: "https://frontend-assignment-6e7bb-default-rtdb.firebaseio.com",
-  projectId: "frontend-assignment-6e7bb",
-  storageBucket: "frontend-assignment-6e7bb.appspot.com",
-  messagingSenderId: "712974371400",
-  appId: "1:712974371400:web:7fe68cf1c59a5c5afde67d",
-  measurementId: "G-FS5Z6ZQ0CB"
+  apiKey: "AIzaSyDNKZcehWx2X1jeBr81A80wH5svIjP6BH0",
+  authDomain: "testing-26912.firebaseapp.com",
+  projectId: "testing-26912",
+  storageBucket: "testing-26912.appspot.com",
+  messagingSenderId: "414086349123",
+  appId: "1:414086349123:web:4a1e0cdd6bce6233f8eff6",
+  measurementId: "G-ZCL1VS96XZ"
 };
 
 // Initialize Firebase

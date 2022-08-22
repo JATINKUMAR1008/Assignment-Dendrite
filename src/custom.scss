@@ -141,6 +141,7 @@ img{
     color:#6c63ff;
     margin-left: 0.5rem;
     margin-right: 3rem;
+    cursor: pointer;
 }
 .Arrow-Left-icon{
     margin-right: 1.5rem;
@@ -382,7 +383,7 @@ a{
         top: 10rem;
     }
     .Main-container{
-        height: 10rem;
+        height: 8.3rem;
         background-color: #f6a192;
     }
     .closed{
@@ -393,10 +394,11 @@ a{
         margin-left:250px;
         transition: 0.4s;
     }
-    img{
+    .image-main{
         position: relative;
         object-fit: contain;
         width: 200px;
+        display: none;
         
     }
     

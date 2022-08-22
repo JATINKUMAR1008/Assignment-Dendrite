@@ -18,7 +18,7 @@ const CardSearch = () => {
         limit: "5",
       },
       headers: {
-        'X-RapidAPI-Key': 'd06e920980msh07c901377c61630p18741djsn300a8fac36e7',
+        'X-RapidAPI-Key': '8490973f37mshd273b80f19a8350p1625d7jsn64815705c1c5',
         'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
       },
     };
@@ -26,14 +26,14 @@ const CardSearch = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
+        
         setSearch(response.data.tracks.hits);
-        console.log("data");
+       
       })
       .catch(function (error) {
         console.error(error);
       });
-  }, [console.log(search)]);
+  }, []);
 
   return (
     <>

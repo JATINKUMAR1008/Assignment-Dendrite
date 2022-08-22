@@ -9,6 +9,8 @@ import CardSearch from './pages/Search/CardSearch';
 
 import { db } from "./Firebase"
 import { addDoc, collection, getDocs } from "firebase/firestore"
+import Playlist from './pages/playlists/Playlist';
+import Favourites from './pages/Favourites/Favourites';
 
 function App() {
   const [keys,setKeys] = useState([])
@@ -17,26 +19,13 @@ function App() {
   const handleChange = () => {
     setSidenav(!sidenav);
   };
-  const createUser = async()=>{
-    await addDoc(ref,{key:1234,status:false })
-  }
-  useEffect(()=>{
-    const getKeys = async()=>{
-      const data = await getDocs(ref)
-      setKeys(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
-      
-    }
-    
-    getKeys();
-    keys.map(({key,status})=>(
-      console.log(key,status)
-    ))
-  },[])
+  
   return (
     <div className="App">
 
       <Sidebar sidenav={sidenav} handleChange={handleChange}/>
       <Main sidenav={sidenav} handleChange={handleChange}/>
+      
       <Routes>
      
      <Route element={<Home sidenav={sidenav} handleChange={handleChange}/>} path="/" exact/>
@@ -44,7 +33,8 @@ function App() {
      <Route element={<Search sidenav={sidenav}/>} path="/search" exact/>
      <Route path='/search/:name' element={<CardSearch/>}/>
      <Route path="/song/:key" element={<Song/>}/>
-     
+     <Route path='/playlists' element={<Playlist/>}/>
+     <Route path='/favourites' element={<Favourites/>}/>
      </Routes>
     </div>
   );
