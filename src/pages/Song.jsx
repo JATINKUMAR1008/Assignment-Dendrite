@@ -28,12 +28,12 @@ const Song = () => {
   }
   const check = (key)=>{
     const temp = likes.findIndex((el)=>el.key === result?.key)
-    console.log(temp)
+    
     if(temp === -1){
       setLike(false)
       
     }else{
-      console.log(likes[temp].id)
+      
       setId(likes[temp].id)
       setLike(true)
     }
