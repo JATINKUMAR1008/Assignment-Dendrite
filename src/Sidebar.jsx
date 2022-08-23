@@ -46,18 +46,14 @@ const Sidebar = ({sidenav,handleChange}) => {
         
       >
         <div className="arrow-box mt-5 ">
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            className={sidenav?"arrow":"hidden"}
-            onClick={handleChange}
-          />
+         
         </div>
         <div className="d-flex justify-content-center align-items-center">
           <div className="">
             <ul className="navbar-nav d-flex flex-column  list-unstyled ">
               {menuList.map(({ id, name, icon }) => (
                 
-                  <li className="nav-item w-100 pl-4 text-capitalize p-2" onClick={handleChange}>
+                  <li key={id} className="nav-item w-100 pl-4 text-capitalize p-2" onClick={handleChange}>
                     <Link className="nav-link " to={`/${name}`}>
                     <span className="list-menu">{icon}</span>
                     {name}

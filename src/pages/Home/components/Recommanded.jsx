@@ -12,8 +12,8 @@ const Recommanded = ({sidenav}) => {
         url: 'https://shazam.p.rapidapi.com/songs/list-recommendations',
         params: {key: '484129036', locale: 'en-US'},
         headers: {
-          'X-RapidAPI-Key': '8490973f37mshd273b80f19a8350p1625d7jsn64815705c1c5',
-          'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+          'X-RapidAPI-Key': '48db9dd94emsh47fd7479b0fe054p13d67cjsn0cc67c824674',
+    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
         }
       };
 

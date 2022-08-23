@@ -18,8 +18,8 @@ const CardSearch = () => {
         limit: "5",
       },
       headers: {
-        'X-RapidAPI-Key': '8490973f37mshd273b80f19a8350p1625d7jsn64815705c1c5',
-        'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+        'X-RapidAPI-Key': '48db9dd94emsh47fd7479b0fe054p13d67cjsn0cc67c824674',
+    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
       },
     };
 

@@ -9,10 +9,12 @@ const Main = ({ sidenav, handleChange }) => {
         <img src={image} alt="image" className="image-main"/>
         <div className=" text-white text-end ">
           <div className="card-img-overlay">
-            <p className="fw-bold p-1 main-title">
+            <div className="fw-bold p-1 main-title">
               Your favourite tunes
-              <p className="fs-2">All and all</p>
-            </p>
+              <p className="fs-2 main-subtitle">All and all</p>
+              </div>
+              
+           
 <div className="w-100 btn-container">
             <button className="btn btn-primary btn-bars" onClick={handleChange}>
               <FontAwesomeIcon icon={faBars}/>

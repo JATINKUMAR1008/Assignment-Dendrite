@@ -18,26 +18,32 @@ const Song = () => {
   const [likes,setLikes] = useState([]) 
   const [id,setId] = useState("")
   const[like,setLike] = useState(false)
-  const[list,setList] = useState([])
   const usercollection = collection(db,"list")
   const likeCollection = collection(db,"likes")
-  
-  const check = ()=>{
+  const getData =async()=>{
+    const likeData = await getDocs(likeCollection)
+    setLikes(likeData.docs.map((doc)=>({...doc.data(),id:doc.id})))
     
-    
-    likes.map(({key,id})=>{
-      console.log(key,result?.key)
-      if(key===result?.key){
-        setLike(!like)
-        setId(id)
-      }
-    })
+
+  }
+  const check = (key)=>{
+    const temp = likes.findIndex((el)=>el.key === result?.key)
+    console.log(temp)
+    if(temp === -1){
+      setLike(false)
+      
+    }else{
+      console.log(likes[temp].id)
+      setId(likes[temp].id)
+      setLike(true)
+    }
   }
 
   const liking = async() =>{
     if(like){
-      const userDoc = doc(db,"likes",id)
       console.log(id)
+      const userDoc = doc(db,"likes",id)
+     
       await deleteDoc(userDoc)
       setLike(!like)
       alert("song Like remove")
@@ -50,14 +56,15 @@ const Song = () => {
 
   }
   
+  
   useEffect(() => {
     const options = {
       method: "GET",
       url: "https://shazam.p.rapidapi.com/songs/get-details",
       params: { key: `${params.key}`, locale: "en-US" },
       headers: {
-        'X-RapidAPI-Key': '8490973f37mshd273b80f19a8350p1625d7jsn64815705c1c5',
-        'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+        'X-RapidAPI-Key': '48db9dd94emsh47fd7479b0fe054p13d67cjsn0cc67c824674',
+    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
       },
     };
 
@@ -71,23 +78,18 @@ const Song = () => {
       .catch(function (error) {
         console.error(error);
       });
-      const getData =async()=>{
-        const data = await getDocs(usercollection)
-        const likeData = await getDocs(likeCollection)
-        setList(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
-        
-        
-       setLikes(likeData.docs.map((doc)=>({...doc.data(),id:doc.id})))
-        
-    
-      }
+      
       getData()
       
      
   }, []);
   useEffect(()=>{
+    getData()
+    console.log()
     check()
-  },)
+  })
+  console.log()
+  
   
   
   

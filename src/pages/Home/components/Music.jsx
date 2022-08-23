@@ -12,10 +12,12 @@ const Music = ({ sidenav }) => {
   const left =()=>{
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft-500
+    console.log("left")
   }
   const right =() =>{
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft+500
+    console.log("right")
   }
 
   useEffect(() => {
@@ -24,8 +26,8 @@ const Music = ({ sidenav }) => {
       url: "https://shazam.p.rapidapi.com/songs/list-artist-top-tracks",
       params: { id: "40008598", locale: "en-US" },
       headers: {
-        'X-RapidAPI-Key': '8490973f37mshd273b80f19a8350p1625d7jsn64815705c1c5',
-        'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+        'X-RapidAPI-Key': '48db9dd94emsh47fd7479b0fe054p13d67cjsn0cc67c824674',
+    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
       },
     };
 
@@ -39,14 +41,19 @@ const Music = ({ sidenav }) => {
       });
   }, []);
   return (
-    <div className={sidenav ? "open" : "closed"}>
+    <div className={sidenav ? "open mt-4" : "closed mt-4"}>
       <div className="Music-container">
         <div className="d-flex mt-5 p-2 justify-content-between align-items-center">
           <h3 className="  music-heading">RELEASED THIS WEEK</h3>
           <span className={sidenav ? "line-non" : "line"}></span>
-          <div className="Arrow-icons ">
-            <FontAwesomeIcon icon={faAngleLeft} className="Arrow-Left-icon" onClick={left}/>
-            <FontAwesomeIcon icon={faAngleRight} className="Arrow-Right-icon" onClick={right} />
+          <div className="Arrow-icons d-flex flex-row">
+            <div className="Arrow-Left-icon">
+            <FontAwesomeIcon icon={faAngleLeft}  onClick={left}/>
+            </div>
+            <div className="Arrow-Right-icon">
+            <FontAwesomeIcon icon={faAngleRight}  onClick={right} />
+            </div>
+            
           </div>
         </div>
         <div className="mt-1 p-1">

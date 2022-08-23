@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
-import axios from "axios";
-import CardSearch from "./CardSearch";
+
 import { Link } from "react-router-dom";
 const Search = ({ sidenav }) => {
   const [search, setSearch] = useState("");
